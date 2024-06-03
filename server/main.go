@@ -38,7 +38,6 @@ func loginSubmit(w http.ResponseWriter, r *http.Request) {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-
 	switch r.URL.Path {
 	case "/login":
 		login(w, r)
@@ -51,6 +50,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", handler)
-	http.ListenAndServe("", nil)
-
+	fmt.Println("Starting server on https://localhost:8080")
+	err := http.ListenAndServeTLS(":8080", "cert.pem", "key.pem", nil)
+	if err != nil {
+		fmt.Println("Error starting server: ", err)
+	}
 }
