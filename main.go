@@ -13,7 +13,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("Error when parsing file: ", err)
 		return
 	}
-	err = t.ExecuteTemplate(w, fileName, nil)
+	err = t.ExecuteTemplate(w, fileName, "Log in")
 	if err != nil {
 		fmt.Println("Error when executing template: ", err)
 		return
@@ -50,9 +50,6 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", handler)
-	fmt.Println("Starting server on https://localhost:8080")
-	err := http.ListenAndServeTLS(":8080", "cert.pem", "key.pem", nil)
-	if err != nil {
-		fmt.Println("Error starting server: ", err)
-	}
+	//http.ListenAndServeTLS(":8080", "cert.pem", "key.pem", nil)
+	http.ListenAndServe("", nil)
 }
