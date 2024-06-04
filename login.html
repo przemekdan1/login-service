@@ -1,52 +1,16 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="./loginsites.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto:wght@100&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@100&display=swap" rel="stylesheet">
-
-
-        <title> Login page </title>
-    </head>
-
-    <body>
-        <div class="container">
-
-            <div class="top-bar">
-            </div>
-            <div class="left-bar">
-            </div>
-            
-            <div class="content">
-                <div class="logo">
-                    <img src="./logo.svg">
-                </div>
-                <div class="welcome-text">
-                    <h1>{{.}}</h1>
-                    <h5>Welcome back! Please enter your details.</h5>
-                </div>
-
-                <div class="login-container">
-                    <form action="/login-submit">
-                        <p>Email</p>
-                        <input name="email" type="text" placeholder="Enter your email" id="email" value="">
-                        <p>Password</p>
-                        <input name="password" type="password" placeholder="Enter your password" id="password" value="">
-                        <button class="sign-in-button" type="submit" value="Submit" >Sign in</button>
-                        <div class="register-forward">
-                            <h5>Don’t have account? </h5>
-                            <a href="/register"> Sing up</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="bottom-bar">
-            </div>
-
-            </div>
-        </div>
-    </body>    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+<body>
+    <form action="/login-submit" method="post">
+        Email: <input type="text" name="email"><br>
+        Password: <input type="password" name="password"><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
 </html>
